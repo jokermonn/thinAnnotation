@@ -18,7 +18,7 @@
         android:enabled="true"
         android:exported="true"
         android:name=".MultiProcessService"
-        android:process="t:second">
+        android:process=":second">
     </service>
 
     <activity android:name=".MainActivity">

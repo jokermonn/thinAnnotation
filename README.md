@@ -29,12 +29,12 @@ buildscript {
 apply plugin: 'thinAnnotation'
 
 thinAnnotation {
-  // 是否开启插件
   enable true
-  // 目标注解类的路径
-  shrinkClass = ['com/joker/maindexkeep/annotations/RuntimeAnn', 'com/joker/maindexkeep/annotations/Type']
-  // 目标包的路径
-  shrinkPackage = ['com/joker/maindexkeep/shrink']
+  shrinkClass 'com/joker/maindexkeep/annotations/RuntimeAnn'
+  // 删除 com/joker/maindexkeep/shrink/ 下所有注解
+  shrinkPackage('com/joker/maindexkeep/shrink/', { true })
+  // 删除 com/joker/maindexkeep/shrink2/ 下除 RUNTIME 之外的所有注解
+  shrinkPackage 'com/joker/maindexkeep/shrink2/'
 }
 ```
 
@@ -51,3 +51,12 @@ thinAnnotation {
 使用后：butterknife 包注解类全部删除，所有使用该注解的地方也都会被清除注解
 
 ![](http://imglf5.nosdn0.126.net/img/UnlRcDgySWkxbnZUbjBCSXdnUFozanN2dzFqaU4xREZZalNtc2JrSGw0WXNQWEQ5NlpQNUlnPT0.png?imageView&thumbnail=2238y1484&type=png&quality=96&stripmeta=0)
+
+## CHANGELOG
+
+0.0.3：
+
+- fix [issue#1](https://github.com/jokermonn/thinAnnotation/issues/1)
+- 使用方式稍作改变
+- 丰富 thinAnnotation log
+- 使用 kotlin
