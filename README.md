@@ -60,3 +60,4 @@ thinAnnotation {
 - 使用方式稍作改变
 - 丰富 thinAnnotation log
 - 使用 kotlin
+- 增加对 `org/intellij/lang/annotations/`、`org/jetbrains/annotations/` 的注解类删除
